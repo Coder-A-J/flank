@@ -24,7 +24,7 @@ class AndroidTestEnvironmentCommand : Runnable {
     override fun run() {
         println(devicesCatalogAsTable(AndroidArgs.load(Paths.get(configPath)).project))
         println(supportedVersionsAsTable(AndroidArgs.load(Paths.get(configPath)).project))
-        GcTesting.networkConfiguration().asPrintableTable().forEach { println(it) }
+        println(GcTesting.networkConfiguration().asPrintableTable())
     }
 
     @CommandLine.Option(names = ["-c", "--config"], description = ["YAML config file path"])

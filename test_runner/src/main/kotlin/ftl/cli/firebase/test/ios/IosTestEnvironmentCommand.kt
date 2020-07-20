@@ -24,7 +24,7 @@ class IosTestEnvironmentCommand : Runnable {
     override fun run() {
         println(devicesCatalogAsTable(IosArgs.load(Paths.get(configPath)).project))
         println(softwareVersionsAsTable(IosArgs.load(Paths.get(configPath)).project))
-        GcTesting.networkConfiguration().asPrintableTable().forEach { println(it) }
+        println(GcTesting.networkConfiguration().asPrintableTable())
     }
 
     @CommandLine.Option(names = ["-c", "--config"], description = ["YAML config file path"])
